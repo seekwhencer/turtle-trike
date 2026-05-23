@@ -1,0 +1,40 @@
+* {
+    font-family: Rubik;
+}
+
+body,
+html {
+    margin: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+body {
+    &.navigation {
+        background-color: var(--color-pink);
+    }
+}
+
+html {
+    font-size: var(--global-size);
+    overscroll-behavior: none;
+    scrollbar-gutter: stable;
+}
+
+h1 {
+    font-weight: 400;
+    margin: 0 0 10px 0;
+}
+
+h2 {
+    font-weight: 400;
+    margin: 0 0 10px 0;
+}
+
+h3 {}
+
+h4 {}
+
+.strong {
+    font-weight: 700;
+}

@@ -1,0 +1,9 @@
+@import './variables.css';
+@import './typo.css';
+@import './global.css';
+@import './toaster.css';
+@import "./responsive.css";
+@import './form.css';
+@import './page.css';
+
+@import "./Components/index.css";

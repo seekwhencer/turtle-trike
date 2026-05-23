@@ -1,0 +1,27 @@
+[
+    {
+        "topic": "turtle/drive/throttle",
+        "enable": true,
+        "debug": true,
+        "label": "Throttle",
+        "calculator": "throttle",
+        "debounce": 50
+    },
+    {
+        "topic": "turtle/drive/throttle/left",
+        "enable": true,
+        "debug": true,
+        "label": "Throttle",
+        "calculator": "throttle",
+        "side" : "left",
+        "pulse" : 100
+    },
+    {
+        "topic": "turtle/drive/throttle/right",
+        "enable": true,
+        "debug": true,
+        "label": "Throttle",
+        "calculator": "throttle",
+        "side" : "right"
+    }
+]

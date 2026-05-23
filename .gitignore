@@ -1,0 +1,7 @@
+.idea
+.vscode
+node_modules
+.env
+device/mediamtx/config.yml
+device/mosquitto/mosquitto.conf
+device/mosquitto/password.txt

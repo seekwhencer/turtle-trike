@@ -1,0 +1,52 @@
+[
+    {
+        "topic": "turtle/system/cpu",
+        "enable": true,
+        "debug": false,
+        "label": "CPU Usage",
+        "calculator": "average",
+        "debounce": 50,
+        "source": {
+            "one": "turtle/system/cpu/1",
+            "two": "turtle/system/cpu/2",
+            "three": "turtle/system/cpu/3",
+            "four": "turtle/system/cpu/4"
+        }
+    },
+    {
+        "topic": "turtle/system/cpu/1",
+        "enable": true,
+        "debug": false,
+        "label": "CPU 1 Usage",
+        "calculator": "cpu",
+        "core": 1,
+        "pulse": 500
+    },
+    {
+        "topic": "turtle/system/cpu/2",
+        "enable": true,
+        "debug": false,
+        "label": "CPU 2 Usage",
+        "calculator": "cpu",
+        "core": 2,
+        "pulse": 500
+    },
+    {
+        "topic": "turtle/system/cpu/3",
+        "enable": true,
+        "debug": false,
+        "label": "CPU 3 Usage",
+        "calculator": "cpu",
+        "core": 3,
+        "pulse": 500
+    },
+    {
+        "topic": "turtle/system/cpu/4",
+        "enable": true,
+        "debug": false,
+        "label": "CPU 4 Usage",
+        "calculator": "cpu",
+        "core": 4,
+        "pulse": 500
+    }
+]

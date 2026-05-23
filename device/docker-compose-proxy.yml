@@ -1,0 +1,21 @@
+networks:
+  turtletrike_default:
+    external: true
+
+services:
+  nginx-proxy:
+    restart: always
+    container_name: ${COMPOSE_PROJECT_NAME}_nginx-proxy
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./proxy/html:/usr/share/nginx/html
+      - ./proxy/dhparam:/etc/nginx/dhparam
+      - ./proxy/certs:/etc/nginx/certs:ro
+      - ./proxy/vhost:/etc/nginx/vhost.d:rw
+      - ./proxy/conf:/etc/nginx/conf.d
+      - ./proxy/htpasswd:/etc/nginx/htpasswds
+      - ./proxy/logs:/var/log/nginx
+    

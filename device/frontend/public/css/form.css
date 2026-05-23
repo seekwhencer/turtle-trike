@@ -1,0 +1,250 @@
+:root {
+    --form-border-bottom: 1px solid var(--light-border-color);
+}
+
+label {
+    display: block;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    padding: 0 var(--space-xs);
+    border-radius: var(--space-xs);
+    text-transform: uppercase;
+}
+
+button {
+    background: var(--color-button);
+    border: none;
+    font-family: var(--font-family), serif;
+    border-radius: var(--space-xs);
+    cursor: pointer;
+    color: black;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-md);
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+
+    &[disabled] {
+        opacity: 0.9;
+    }
+
+    &.active {
+        background-color: var(--color-primary);
+    }
+
+    &:hover {
+        transition: all 0.1s ease-in-out;
+        background-color: var(--color-primary-bright);
+    }
+
+    &:active {
+        transform: scale(0.97);
+        transition: all 0.1s ease-in-out;
+        background-color: var(--color-primary);
+    }
+
+    &.secondary {
+        background-color: var(--bright-01);
+        color: white;
+
+        &.active {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        &:hover {
+            background-color: var(--color-primary-bright);
+            color: black;
+        }
+
+        &:active {
+            background-color: var(--color-primary);
+        }
+    }
+
+    &.delete {
+        background-color: var(--color-primary-conter);
+    }
+
+    &.small {
+        padding: var(--space-xs) var(--space-md);
+        font-size: var(--fs-xs);
+        text-transform: uppercase;
+        background-color: var(--shift-002);
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+
+
+        &:hover,
+        &.active {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        &.delete {
+            border-color: var(--color-primary-conter);
+            color: var(--color-primary-conter);
+
+            &:hover,
+            &.active {
+                background-color: var(--color-primary-conter);
+                color: white;
+            }
+        }
+    }
+
+
+}
+
+option {
+    font-family: var(--font-family), serif;
+    font-size: var(--fs-md);
+}
+
+select {
+    /*-moz-appearance: toolbox;
+    /*appearance: base-select;
+    /*-webkit-appearance: none; /* Remove style Chrome */
+    /*-moz-appearance: none; /* Remove style FireFox */
+    color: var(--text-color);
+    border: 1px solid var(--shift-05);
+    background-color: var(--light-med-bg);
+    padding: var(--space-xs);
+    border-radius: var(--space-xs);
+    text-align: left;
+    position: relative;
+    margin-left: var(--space-xs);
+    font-size: var(--fs-sm);
+    cursor: pointer;
+
+    &:open {
+        outline: var(--space-2xs) solid var(--color-primary);
+    }
+
+    option {
+        /*appearance:base;
+        /*-webkit-appearance: none; /* Remove style Chrome */
+        /*-moz-appearance: none; /* Remove style FireFox */
+        margin: 0;
+        padding: 0;
+        border-bottom: var(--light-border-color);
+        border-radius: initial;
+        background-color: var(--light-med-bg);
+        cursor: pointer;
+        font-family: var(--font-family), serif;
+        font-size: var(--fs-md);
+
+        &:checked {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+    }
+}
+
+::picker(select):popover-open {
+    appearance: base-select;
+    outline: var(--space-xs) solid var(--color-primary);
+}
+
+
+input[type=text],
+input[type=number],
+input[type=password] {
+    display: inline-block;
+    padding: var(--space-xs);
+    font-family: var(--font-family);
+    font-size: var(--fs-sm);
+    color: var(--text-color);
+    border: 1px solid var(--shift-05);
+    background-color: var(--light-med-bg);
+    border-radius: var(--space-xs);
+
+    &:focus-visible {
+        outline: var(--space-2xs) solid var(--color-primary);
+        background: white;
+    }
+}
+
+select[value] {
+    border-color: var(--color-primary);
+}
+
+select[value=""] {
+    border-color: var(--light-border-color);
+}
+
+input[type=checkbox] {
+    --switch-height: calc(var(--space-md) * 0.7);
+    --switch-width: calc(var(--space-sm)*3);
+
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    transform: translateY(-13px);
+    margin: 0;
+
+    &:before {
+        visibility: visible;
+        position: absolute;
+        border-radius: var(--space-md);
+        content: "";
+        display: block;
+        width: var(--switch-width);
+        height: var(--switch-height);
+        overflow: hidden;
+        background-color: var(--light-med-bg);
+        border: 1px solid var(--shift-02);
+    }
+
+    &:after {
+        visibility: visible;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        border-radius: var(--space-md);
+        content: "";
+        display: block;
+        width: calc(var(--switch-height) - 4px);
+        height: calc(var(--switch-height) - 4px);
+        top: 3px;
+        left: 3px;
+        overflow: hidden;
+        background-color: var(--shift-02);
+        transition: left 0.1s ease-in-out;
+    }
+
+    &:checked:after {
+        left: calc(var(--switch-width) - var(--switch-height) + 2px);
+        transition: left 0.1s ease-in-out;
+        background-color: var(--page-bg);
+    }
+
+    &:checked:before {
+        background-color: var(--color-primary);
+        border-color: var(--shift-02);
+    }
+}
+
+textarea {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 0 0 var(--space-xs);
+    padding: var(--space-md);
+    font-family: var(--font-family), courier;
+    font-size: var(--fs-md);
+    color: var(--text-color);
+    border: 0;
+    border-bottom: var(--form-border-bottom);
+    background-color: var(--light-med-bg);
+    border-radius: var(--space-xs);
+
+    height: 60px;
+    resize: none;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+
+
+    &:focus-visible {
+        outline: var(--space-xs) solid var(--color-primary);
+    }
+}

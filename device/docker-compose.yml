@@ -1,0 +1,29 @@
+networks:
+  turletrike:
+    name: turletrike
+  turtletrike_default:
+    external: true
+
+services:
+  turtletrike_server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: ${COMPOSE_PROJECT_NAME}_server
+    container_name: ${COMPOSE_PROJECT_NAME}_server
+    working_dir: /app/server
+    #command: 'npm start'
+    command: "tail -f /dev/null"
+
+    networks:
+      - turletrike
+      - turtletrike_default
+
+    volumes:
+      - ./:/app
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    
+    environment:
+      - VIRTUAL_HOST=turtle
+      - VIRTUAL_PORT=${SERVER_PORT}

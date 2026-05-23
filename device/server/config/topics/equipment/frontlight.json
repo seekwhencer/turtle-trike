@@ -1,0 +1,9 @@
+[
+    {
+        "topic": "turtle/equipment/frontlight",
+        "enable": true,
+        "debug": true,
+        "label": "Frontlight",
+        "calculator": "frontlight"
+    }
+]

@@ -1,0 +1,14 @@
+{
+    "name": "turtle-trike-frontend",
+    "version": "0.0.1",
+    "description": "the frontend",
+    "author": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node --env-file=../.env index.js"
+    },
+    "dependencies": {
+        "esbuild": "^0.27.3"
+    }
+}

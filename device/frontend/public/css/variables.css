@@ -1,0 +1,159 @@
+:root {  
+    --global-size: clamp(85%, 2.8vw, 115%);
+    --font-family: Rubik, sans-serif;
+
+    --text-color: #333;
+    --text-color-inverted: #ddd;
+    --text-light-color: #666;
+
+    --color-primary: #6ba945;
+    --color-primary-bright: hsl(from var(--color-primary) h calc(s + 30) calc(l + 15));
+    --color-primary-dark: hsl(from var(--color-primary) h calc(s - 10) calc(l - 10));
+
+    --color-secondary: #7f2291;
+    --color-secondary-bright: hsl(from var(--color-secondary) h s calc(l + 15));
+    --color-secondary-dark: hsl(from var(--color-secondary) h s calc(l - 15));
+
+    --color-blue: #2a62ef;
+    --color-blue-bright: hsl(from var(--color-blue) h s calc(l + 15));
+    --color-blue-dark: hsl(from var(--color-blue) h s calc(l - 15));
+
+    --color-orange: #dc6e48;
+    --color-orange-bright: hsl(from var(--color-orange) h s calc(l + 15));
+    --color-orange-dark: hsl(from var(--color-orange) h s calc(l - 15));
+
+    --color-green: #6db076;
+    --color-green-bright: hsl(from var(--color-green) h s calc(l + 15));
+    --color-green-dark: hsl(from var(--color-green) h s calc(l - 15));
+
+    --color-pink: #dca2c4;
+    --color-pink-bright: hsl(from var(--color-pink) h s calc(l + 15));
+    --color-pink-dark: hsl(from var(--color-pink) h s calc(l - 15));
+
+    --color-yellow: #ebde52;
+    --color-yellow-bright: hsl(from var(--color-yellow) h s calc(l + 15));
+    --color-yellow-dark: hsl(from var(--color-yellow) h s calc(l - 15));
+
+    --color-warn: #8d311c;
+    --color-warn-bright: hsl(from var(--color-warn) h s calc(l + 15));
+    --color-warn-dark: hsl(from var(--color-warn) h s calc(l - 15));
+
+    --color-button: #CEB7DA;
+
+
+    --page-bg: white;
+    --light-border-color: #ddd;
+    --light-bg: #f0f0f0;
+    --light-med-bg: #eee;
+
+    --color-bottom-box: #252525;
+
+    --color-warning: #8d311c;
+
+    --shift-001: rgba(0, 0, 0, 0.01);
+    --shift-002: rgba(0, 0, 0, 0.02);
+    --shift-005: rgba(0, 0, 0, 0.05);
+    --shift-01: rgba(0, 0, 0, 0.1);
+    --shift-02: rgba(0, 0, 0, 0.2);
+    --shift-03: rgba(0, 0, 0, 0.3);
+    --shift-04: rgba(0, 0, 0, 0.4);
+    --shift-05: rgba(0, 0, 0, 0.5);
+    --shift-06: rgba(0, 0, 0, 0.6);
+    --shift-07: rgba(0, 0, 0, 0.7);
+    --shift-08: rgba(0, 0, 0, 0.8);
+    --shift-09: rgba(0, 0, 0, 0.9);
+
+    --bright-001: rgba(255, 255, 255, 0, 0.01);
+    --bright-002: rgba(255, 255, 255, 0.02);
+    --bright-005: rgba(255, 255, 255, 0.05);
+    --bright-01: rgba(255, 255, 255, 0.1);
+    --bright-02: rgba(255, 255, 255, 0.2);
+    --bright-03: rgba(255, 255, 255, 0.3);
+    --bright-04: rgba(255, 255, 255, 0.4);
+    --bright-05: rgba(255, 255, 255, 0.5);
+    --bright-06: rgba(255, 255, 255, 0.6);
+    --bright-07: rgba(255, 255, 255, 0.7);
+    --bright-08: rgba(255, 255, 255, 0.8);
+    --bright-09: rgba(255, 255, 255, 0.9);
+
+
+    --space-ratio: 2;
+    --space-base: 1rem;
+
+    --space-2xs: calc(var(--space-base) / (var(--space-ratio) * 4));
+    --space-xs: calc(var(--space-base) / var(--space-ratio));
+    --space-sm: var(--space-base);
+    --space-md: calc(var(--space-base) * var(--space-ratio));
+    --space-lg: calc(var(--space-md) * var(--space-ratio));
+    --space-xl: calc(var(--space-lg) * var(--space-ratio));
+    --space-2xl: calc(var(--space-xl) * var(--space-ratio));
+    --space-3xl: calc(var(--space-2xl) * var(--space-ratio));
+    --space-4xl: calc(var(--space-3xl) * var(--space-ratio));
+    --space-5xl: calc(var(--space-4xl) * var(--space-ratio));
+
+
+
+    --scale-ratio: 1.25;
+    --fs-base: clamp(0.5rem, 1rem, 1rem);
+
+    --fs-2xs: calc(var(--fs-base) / (var(--scale-ratio) * 1.5));
+    --fs-xs: calc(var(--fs-base) / var(--scale-ratio));
+    --fs-sm: calc(var(--fs-md) / var(--scale-ratio));
+    --fs-md: calc(var(--fs-base) * var(--scale-ratio));
+    --fs-lg: calc(var(--fs-md) * var(--scale-ratio));
+    --fs-xl: calc(var(--fs-lg) * var(--scale-ratio));
+    --fs-2xl: calc(var(--fs-xl) * var(--scale-ratio));
+    --fs-3xl: calc(var(--fs-2xl) * var(--scale-ratio));
+    --fs-4xl: calc(var(--fs-3xl) * var(--scale-ratio));
+
+    --line-height-tight: 1.2;
+    --line-height-snug: 1.35;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.65;
+    --line-height-loose: 1.8;
+
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.05em;
+    --letter-spacing-ultra: 0.1em;
+
+    --color-chart-01: #3e8351;
+    --color-chart-02: #4f6e93;
+    --color-chart-03: #633a8f;
+
+}
+
+:root[data-theme="dark"] {
+    --text-color: #ddd;
+    --text-light-color: #666;
+
+    --color-primary: #2e5381;
+    --color-secondary: #294563;
+    --color-primary-conter: #8d311c;
+    --color-secondary-conter: #4f1306;
+
+    --page-bg: #333;
+    --light-border-color: #555;
+    --light-bg: #444;
+    --light-med-bg: #222;
+
+    --color-warning: #8d311c;
+
+    --shift-001: rgba(255, 255, 255, 0.01);
+    --shift-002: rgba(255, 255, 255, 0.02);
+    --shift-005: rgba(255, 255, 255, 0.05);
+    --shift-01: rgba(255, 255, 255, 0.1);
+    --shift-02: rgba(255, 255, 255, 0.2);
+    --shift-03: rgba(255, 255, 255, 0.3);
+    --shift-04: rgba(255, 255, 255, 0.4);
+    --shift-05: rgba(255, 255, 255, 0.5);
+
+    --bright-001: rgba(0, 0, 0, 0, 0.01);
+    --bright-002: rgba(0, 0, 0, 0.02);
+    --bright-005: rgba(0, 0, 0, 0.05);
+    --bright-01: rgba(0, 0, 0, 0.1);
+    --bright-02: rgba(0, 0, 0, 0.2);
+    --bright-03: rgba(0, 0, 0, 0.3);
+    --bright-04: rgba(0, 0, 0, 0.4);
+    --bright-05: rgba(0, 0, 0, 0.5);
+}

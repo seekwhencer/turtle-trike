@@ -1,0 +1,40 @@
+{
+    "de": {
+        "label": "deutsch",
+        "active": true
+    },
+    "en": {
+        "label": "english",
+        "active": true,
+        "default": true
+    },
+    "ua" : {
+        "label": "українська",
+        "active" : false
+    },
+    "ar" : {
+        "label": "عربي",
+        "active" : false,
+        "rtl" : false
+    },
+    "fr": {
+        "label": "français",
+        "active": false
+    },
+    "es": {
+        "label": "español",
+        "active": false
+    },
+    "it": {
+        "label": "italiano",
+        "active": false
+    },
+    "pl": {
+        "label": "polski",
+        "active": false
+    },
+    "tr": {
+        "label": "türkçe",
+        "active": false
+    }
+}

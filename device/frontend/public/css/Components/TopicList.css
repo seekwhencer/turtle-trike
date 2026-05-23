@@ -1,0 +1,101 @@
+.topic-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 90vh;
+    width: calc(100vw - (var(--space-lg) * 2));
+    bottom: var(--space-lg);
+    padding: 0 var(--space-lg);
+
+    .topic {
+        background-color: var(--shift-07);
+        color: white;
+        margin-bottom: var(--space-2xs);
+        border-radius: var(--space-2xs);
+        position: relative;
+
+        font-size: var(--fs-xs);
+        transition-property: background-color, color;
+        transition-duration: 0.1s;
+        transition-timing-function: cubic-bezier(1, 0, 0, 1);
+
+        &:before {
+            content: '';
+            width: var(--space-xs);
+            height: var(--space-xs);
+            position: absolute;
+            left: calc(var(--space-xs) / -2);
+            top: calc(var(--space-lg) / 9);
+            background-color: var(--shift-002);
+            border-radius: var(--space-md);
+            transition-property: background-color, color;
+            transition-duration: 0.1s;
+            transition-timing-function: cubic-bezier(1, 0, 0, 1);
+
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        &.added {
+            background-color: var(--color-primary);
+            color: white;
+
+        }
+
+        &.updated {
+
+            &:before {
+                background-color: var(--color-secondary);
+                transition-duration: 0s;
+            }
+        }
+
+    }
+
+    .topic-row {
+        display: flex;
+
+        &:hover {
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+    }
+
+    .topic-path {
+        flex: 1;
+        min-width: 0;
+        padding: var(--space-2xs) var(--space-xs);
+    }
+
+    .topic-data {
+        display: flex;
+        gap: var(--space-2xs);
+        align-items: center;
+
+        div {
+            min-width: 100px;
+            text-align: center;
+        }
+    }
+
+    .topic-value {
+        flex-shrink: 0;
+        padding: var(--space-2xs) var(--space-xs);
+    }
+
+    .topic-time {
+        flex-shrink: 0;
+        padding: var(--space-2xs) var(--space-xs);
+        font-size: var(--fs-2xs);
+    }
+
+    .topic-count {
+        flex-shrink: 0;
+        padding: var(--space-2xs) var(--space-xs);
+    }
+}

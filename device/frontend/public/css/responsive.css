@@ -1,0 +1,7 @@
+@media (max-width: 360px),  (max-height: 640px) {
+    :root {
+        --global-size: clamp(70%, 0.8rem, 115%);
+        --space-base: 0.6rem;
+        --fs-base: 1rem;
+    }
+}

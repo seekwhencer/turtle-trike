@@ -1,0 +1,53 @@
+api: yes
+apiAddress: :9997
+apiAllowOrigins: ['*']
+
+authMethod: internal
+authInternalUsers:
+  # Default unprivileged user.
+  # Username. 'any' means any user, including anonymous ones.
+  - user: any
+    # Password. Not used in case of 'any' user.
+    pass:
+    # IPs or networks allowed to use this user. An empty list means any IP.
+    ips: []
+    # List of permissions.
+    permissions:
+      # Available actions are: publish, read, playback, api, metrics, pprof.
+      - action: publish
+        # Paths can be set to further restrict access to a specific path.
+        # An empty path means any path.
+        # Regular expressions can be used by using a tilde as prefix.
+      - action: read
+      - action: playback
+      - action: api
+      - action: metrics
+      - action: pprof
+
+# RTSP aktiv lassen
+rtsp: yes
+
+# WebRTC aktivieren
+webrtc: yes
+webrtcAdditionalHosts: [ turtle ]
+webrtcLocalTCPAddress: :8189
+
+hls: yes
+
+paths:
+  live:
+    source: rtsp://...
+    sourceOnDemand: yes
+
+  live-sub:
+    source: rtsp://...
+    sourceOnDemand: yes
+
+  rear:
+    source: publisher
+
+  left:
+    source: publisher
+
+  right:
+    source: publisher

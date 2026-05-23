@@ -1,0 +1,11 @@
+[
+    {
+        "topic": "turtle/system/memory",
+        "enable": true,
+        "debug": false,
+        "label": "Ram Usage",
+        "calculator": "ram",
+        "pulse": 500,
+        "timeZone": "Europe/Berlin"
+    }
+]

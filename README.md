@@ -1,4 +1,4 @@
-# tutle trike
+# turtle trike
 
 Whatever. Work in Progress.
 
@@ -56,7 +56,10 @@ This are two configurations.
 - `topic` is the new publishing target  
 - `calculator` equals the export name in `lib/Mqtt/Calculators/index.js`  
 - `debounce` in ms
-- `source` can be an array of topics, an object where the key is a name and the value is a source topic or a sinngle topic as string
+- `source`can be 
+  - an **array of topics**, 
+  - an **object** where the key is a name and the value is a source topic 
+  - or a **single topic as string**
 - `pulse` means: ms to reapeat the calculation and publish it
 - something like `core` is an individual property for this topic calculator
 
@@ -78,10 +81,10 @@ This are two configurations.
 
 To understand:
 
-- "a value" from a topic will be set **only** by receiving it. the value will not be set internally.
-- a calculator publish it's result on it's topic
-- a calculator can be deaf for source topics, but a post processing task can still publish the value
-- restart the server to load the new topic json configurations
+- a value from a topic is set only when it is received. It is never set internally.
+- a calculator publishes its result to its topic.
+- a calculator can be deaf to source topics, while a post-processing task can still publish the value.
+- restart the server to load the new topic JSON configurations.
   
 
 ### Why turle trike?

@@ -1,6 +1,6 @@
 networks:
-  turletrike:
-    name: turletrike
+  turtletrike:
+    name: turtletrike
   turtletrike_default:
     external: true
 
@@ -15,15 +15,22 @@ services:
     #command: 'npm start'
     command: "tail -f /dev/null"
 
-    networks:
-      - turletrike
-      - turtletrike_default
+   # networks:
+   #   - turtletrike
+   #   - turtletrike_default
+    
+    network_mode: host
 
     volumes:
       - ./:/app
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
     
     environment:
       - VIRTUAL_HOST=turtle
       - VIRTUAL_PORT=${SERVER_PORT}
+
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW

@@ -1,0 +1,36 @@
+networks:
+  turtletrike:
+    name: turtletrike
+  turtletrike_default:
+    external: true
+
+services:
+  turtletrike_server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: ${COMPOSE_PROJECT_NAME}_server
+    container_name: ${COMPOSE_PROJECT_NAME}_server
+    working_dir: /app/server
+    #command: 'npm start'
+    command: "tail -f /dev/null"
+
+   # networks:
+   #   - turtletrike
+   #   - turtletrike_default
+    
+    network_mode: host
+
+    volumes:
+      - ./:/app
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    
+    environment:
+      - VIRTUAL_HOST=turtle
+      - VIRTUAL_PORT=${SERVER_PORT}
+
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW

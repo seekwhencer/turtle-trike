@@ -7,7 +7,7 @@ export default class MapTopic extends Calculator {
         this.label = 'TOPIC CALCULATOR MAP TOPIC';
         this.debug ? LOG(this.label, 'INIT WITH TOPIC:', this.topic) : null;
 
-        this.runLatestJob();
+        //this.runLatestJob();
     }
 
     calculate(topic = false) {

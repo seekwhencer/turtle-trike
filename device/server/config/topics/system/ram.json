@@ -4,6 +4,7 @@
         "enable": true,
         "debug": false,
         "label": "Ram Usage",
+        "unit": "%",
         "calculator": "ram",
         "pulse": 500,
         "timeZone": "Europe/Berlin"

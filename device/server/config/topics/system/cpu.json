@@ -4,6 +4,7 @@
         "enable": true,
         "debug": false,
         "label": "CPU Usage",
+        "unit": "%",
         "calculator": "average",
         "debounce": 50,
         "source": {
@@ -18,6 +19,7 @@
         "enable": true,
         "debug": false,
         "label": "CPU 1 Usage",
+        "unit": "%",
         "calculator": "cpu",
         "core": 1,
         "pulse": 500
@@ -27,6 +29,7 @@
         "enable": true,
         "debug": false,
         "label": "CPU 2 Usage",
+        "unit": "%",
         "calculator": "cpu",
         "core": 2,
         "pulse": 500
@@ -36,6 +39,7 @@
         "enable": true,
         "debug": false,
         "label": "CPU 3 Usage",
+        "unit": "%",
         "calculator": "cpu",
         "core": 3,
         "pulse": 500
@@ -45,6 +49,7 @@
         "enable": true,
         "debug": false,
         "label": "CPU 4 Usage",
+        "unit": "%",
         "calculator": "cpu",
         "core": 4,
         "pulse": 500

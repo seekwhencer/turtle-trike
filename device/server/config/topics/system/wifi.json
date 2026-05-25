@@ -1,0 +1,11 @@
+[
+    {
+        "topic": "turtle/system/wifi/signal",
+        "enable": true,
+        "debug": true,
+        "label": "Wifi Signal",
+        "unit": "dBm",
+        "calculator": "wifi",
+        "pulse": 500
+    }
+]

@@ -2,7 +2,7 @@
     {
         "topic": "turtle/drive/throttle",
         "enable": true,
-        "debug": true,
+        "debug": false,
         "label": "Throttle",
         "calculator": "throttle",
         "debounce": 50
@@ -10,7 +10,7 @@
     {
         "topic": "turtle/drive/throttle/left",
         "enable": true,
-        "debug": true,
+        "debug": false,
         "label": "Throttle",
         "calculator": "throttle",
         "side" : "left",
@@ -19,7 +19,7 @@
     {
         "topic": "turtle/drive/throttle/right",
         "enable": true,
-        "debug": true,
+        "debug": false,
         "label": "Throttle",
         "calculator": "throttle",
         "side" : "right"

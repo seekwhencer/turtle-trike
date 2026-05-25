@@ -14,6 +14,7 @@ import Minimum from "./Min.js";
 import Cpu from "./Cpu.js";
 import Ram from "./Ram.js";
 import Throttle from "./Throttle.js";
+import Wifi from "./Wifi.js";
 
 export {
     Calculator as default,
@@ -31,5 +32,6 @@ export {
     Minimum as minimum,
     Cpu as cpu,
     Ram as ram,
-    Throttle as throttle
+    Throttle as throttle,
+    Wifi as wifi
 }

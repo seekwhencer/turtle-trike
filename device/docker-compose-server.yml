@@ -11,6 +11,7 @@ services:
       dockerfile: server/Dockerfile
     image: ${COMPOSE_PROJECT_NAME}_server
     container_name: ${COMPOSE_PROJECT_NAME}_server
+    restart: always
     working_dir: /app/server
     #command: 'npm start'
     command: "tail -f /dev/null"
@@ -20,12 +21,16 @@ services:
    #   - turtletrike_default
     
     network_mode: host
-
+    privileged: true
+    user: root
+    
     volumes:
       - ./:/app
+      - ./dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
+      - ./hostapd/hostapd.conf:/etc/hostapd/hostapd.conf
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
+      - /run/dbus:/run/dbus
     
     environment:
       - VIRTUAL_HOST=turtle

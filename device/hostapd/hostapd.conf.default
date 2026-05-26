@@ -1,0 +1,13 @@
+country_code=DE
+interface=wlan1
+driver=nl80211
+
+ssid=TURTLE-NET
+hw_mode=g
+channel=6
+
+auth_algs=1
+wpa=2
+wpa_passphrase=SehrSicher123
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP

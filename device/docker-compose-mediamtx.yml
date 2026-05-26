@@ -15,7 +15,7 @@ services:
       - "${MEDIAMTX_WEBRTC_PORT}:${MEDIAMTX_WEBRTC_PORT}"             # WebRTC API
       - "${MEDIAMTX_WEBRTC_UDP_PORT}:${MEDIAMTX_WEBRTC_UDP_PORT}/udp" # WebRTC ICE/UDP
       - "${MEDIAMTX_METRICS_PORT}:${MEDIAMTX_METRICS_PORT}"           # Mmetrix ICE/UDP
-#      - "${API_PORT}:${MEDIAMTX_API_PORT}"                   # API ! is reachable per docker network
+#      - "${API_PORT}:${MEDIAMTX_API_PORT}"                           # API ! is reachable per docker network
     volumes:
       - ./mediamtx/config.yml:/mediamtx.yml:ro
       - ./media:/media

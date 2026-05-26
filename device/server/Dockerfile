@@ -3,7 +3,19 @@ FROM node:lts-alpine3.22
 VOLUME ["/app/server/node_modules", "/app/frontend/node_modules"]
 
 
-RUN apk add --no-cache iw
+RUN apk add --no-cache \
+    hostapd \
+    dnsmasq \
+    iw \
+    wireless-tools \
+    iproute2 \
+    iptables \
+    bash \
+    dbus
+
+RUN mkdir -p /run/dbus
+
+
 
 RUN npm install -g npm-check-updates
 

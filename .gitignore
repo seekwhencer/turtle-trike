@@ -7,3 +7,6 @@ device/mosquitto/mosquitto.conf
 device/mosquitto/password.txt
 device/dnsmasq/dnsmasq.conf
 device/hostapd/hostapd.conf
+device/wpa-supplicant/**/*
+
+!**/*.default

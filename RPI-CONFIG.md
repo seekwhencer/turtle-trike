@@ -8,12 +8,13 @@ sudo nano /etc/dhcpcd.conf
 ```
 
 ```bash
-interface wlan1
-static ip_address=192.168.50.1/24
-nohook wpa_supplicant
+interface eth1
+  static ip_address=192.168.50.1/24
 
-interface eth0
-static ip_address=192.168.60.1/24
+#interface ap
+#  static ip_address=192.168.50.1/24
+#  nohook wpa_supplicant
+
 ```
 
 ```bash
@@ -28,17 +29,22 @@ sudo sysctl -p
 ```
 
 ```bash
-sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
-
-sudo iptables -A FORWARD -i wlan1 -o wlan0 -j ACCEPT
-sudo iptables -A FORWARD -i wlan0 -o wlan1 -m state --state RELATED,ESTABLISHED -j ACCEPT
-
-sudo iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
-sudo iptables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-
-sudo netfilter-persistent save
+sudo systemctl disable wpa_supplicant@wlan0
 ```
 
+## mac finden und eintragen
+```bash
+ip link
+```
+
+```bash
+sudo nano /etc/udev/rules.d/70-wifi-names.rules
+```
+
+```bash
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="dc:a6:32:1d:08:b3", NAME="ap"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:c0:ca:a8:28:b6", NAME="uplink"
+```
 
 
 

@@ -8,19 +8,20 @@ services:
     image: bluenviron/mediamtx:${MEDIAMTX_VERSION}
     container_name: ${COMPOSE_PROJECT_NAME}_mediamtx
     restart: unless-stopped
-    ports:
-      - "${MEDIAMTX_HLS_PORT}:${MEDIAMTX_HLS_PORT}"                   # HLS
-      - "${MEDIAMTX_RTSP_PORT}:${MEDIAMTX_RTSP_PORT}"                 # RTSP
-      - "${MEDIAMTX_RTMP_PORT}:${MEDIAMTX_RTMP_PORT}"                 # RTMP
-      - "${MEDIAMTX_WEBRTC_PORT}:${MEDIAMTX_WEBRTC_PORT}"             # WebRTC API
-      - "${MEDIAMTX_WEBRTC_UDP_PORT}:${MEDIAMTX_WEBRTC_UDP_PORT}/udp" # WebRTC ICE/UDP
-      - "${MEDIAMTX_METRICS_PORT}:${MEDIAMTX_METRICS_PORT}"           # Mmetrix ICE/UDP
+    network_mode: host
+#    ports:
+#      - "${MEDIAMTX_HLS_PORT}:${MEDIAMTX_HLS_PORT}"                   # HLS
+#      - "${MEDIAMTX_RTSP_PORT}:${MEDIAMTX_RTSP_PORT}"                 # RTSP
+#      - "${MEDIAMTX_RTMP_PORT}:${MEDIAMTX_RTMP_PORT}"                 # RTMP
+#      - "${MEDIAMTX_WEBRTC_PORT}:${MEDIAMTX_WEBRTC_PORT}"             # WebRTC API
+#      - "${MEDIAMTX_WEBRTC_UDP_PORT}:${MEDIAMTX_WEBRTC_UDP_PORT}/udp" # WebRTC ICE/UDP
+#      - "${MEDIAMTX_METRICS_PORT}:${MEDIAMTX_METRICS_PORT}"           # Mmetrix ICE/UDP
 #      - "${API_PORT}:${MEDIAMTX_API_PORT}"                           # API ! is reachable per docker network
     volumes:
       - ./mediamtx/config.yml:/mediamtx.yml:ro
       - ./media:/media
-    networks:
-      - turtletrike
+    #networks:
+    #  - turtletrike
     devices:
       - '/dev/video10:/dev/video10'
       - '/dev/video11:/dev/video11'

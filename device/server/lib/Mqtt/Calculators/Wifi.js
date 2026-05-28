@@ -22,7 +22,7 @@ export default class Wifi extends Calculator {
 
     command() {
         return new Promise((resolve, reject) => {
-            exec('iw dev wlan0 link', (err, stdout) => {
+            exec(`iw dev ${this.topic.data.device} link`, (err, stdout) => {
                 if (err)
                     return reject(err);
 

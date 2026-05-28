@@ -1,11 +1,12 @@
 [
     {
-        "topic": "turtle/system/wifi/signal",
+        "topic": "turtle/system/wifi/uplink",
         "enable": true,
         "debug": true,
-        "label": "Wifi Signal",
+        "label": "Wifi Uplink Signal",
         "unit": "dBm",
         "calculator": "wifi",
+        "device": "uplink",
         "pulse": 500
     }
 ]

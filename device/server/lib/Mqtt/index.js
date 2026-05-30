@@ -46,12 +46,4 @@ export default class Mqtt extends MODULECLASS {
         };
         this.server.sendAll(JSON.stringify(wsData));
     }
-
-    get server() {
-        return this.parent.WEBSERVER;
-    }
-
-    set server(val) {
-        //
-    }
 }

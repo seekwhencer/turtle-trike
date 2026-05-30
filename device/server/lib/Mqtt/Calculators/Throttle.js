@@ -21,10 +21,13 @@ export default class Throttle extends Calculator {
 
         this.value = await this.getData();
 
+        LOG('???', this.device.label);
+
     }
 
     async getData() {
         return Date.now();
     }
+    
 
 }

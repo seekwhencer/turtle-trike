@@ -114,34 +114,22 @@ export default class MqttTopic extends MODULECLASS {
     get keys() {
         return Object.keys(this.data);
     }
-
-    set keys(val) {
-        // do nothing
-    }
+    set keys(val) {}
 
     get topics() {
         return this.parent;
     }
-
-    set topics(val) {
-        //
-    }
+    set topics(val) {}
 
     get mqtt() {
         return this.topics.mqtt;
     }
-
-    set mqtt(val) {
-        //
-    }
+    set mqtt(val) {}
 
     get topic() {
         return this.data.topic;
     }
-
-    set topic(val) {
-        // do nothing
-    }
+    set topic(val) {}
 
     get value() {
         return this.history.length > 0 ? this.history[0].value : false;

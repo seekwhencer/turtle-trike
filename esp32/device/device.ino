@@ -112,12 +112,20 @@ int setSpeed(int speed, String side) {
 void deviceReady() {
   setSpeed(25, "left");  delay(200);
   setSpeed(50, "left");  delay(200);
+  setSpeed(100, "left");  delay(200);
+  setSpeed(-100, "left");  delay(200);
   setSpeed(0, "left");
-  
-  setSpeed(25, "right"); delay(200);
+
+  setSpeed(25, "right"); delay(200);  
   setSpeed(50, "right"); delay(200);
+  setSpeed(100, "right"); delay(200);
+  setSpeed(-100, "right"); delay(200);
   setSpeed(0, "right");  delay(200);
   
-  setSpeed(50, "right"); setSpeed(50, "left");   delay(200);
-  setSpeed(0, "right");  setSpeed(0, "left");
+  setSpeed(-50, "right");
+  setSpeed(-50, "left");
+  delay(1000);
+
+  setSpeed(0, "right");
+  setSpeed(0, "left");
 }

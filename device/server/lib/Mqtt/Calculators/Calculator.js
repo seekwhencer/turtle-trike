@@ -41,6 +41,7 @@ export default class Calculator extends MODULECLASS {
 
     }
 
+    // --- value ---
     get value() {
         return this._value;
     }
@@ -48,33 +49,38 @@ export default class Calculator extends MODULECLASS {
         this._value = val; //.toFixed(this.precision) * 1;
         this.publish();
     }
-
+    // --- topic object ---
     get topic() {
         return this.parent;
     }
     set topic(val) { }
 
+    // --- topic's data ---
     get data() {
         return this.topic.data;
     }
     set data(val) { }
 
+    // --- mqtt object ---
     get mqtt() {
         return this.topic.mqtt;
     }
     set mqtt(val) { }
 
 
+    // --- topic sources ---
     get source() {
         return this.topic.sourceTopics;
     }
     set source(val) { }
 
+    // --- source topics as array ---
     get topics() {
         return this.topic.topics.keys;
     }
     set topics(val) { }
 
+    // --- source values from source topics as key-value object ---
     get values() {
         const values = {};
         this.topic.topics.keys.forEach(topic => {
@@ -82,35 +88,39 @@ export default class Calculator extends MODULECLASS {
         });
         return values;
     }
-    set values(val) {
-        //
-    }
+    set values(val) {}
 
+    // --- enable ---
     get enable() {
         return this.data.enable || true;
     }
     set enable(val) { }
 
+    // --- debug ---
     get debug() {
         return this.data.debug || false;
     }
     set debug(val) { }
 
+    // --- debounce ---
     get debounce() {
         return this.data.debounce || false;
     }
     set debounce(val) { }
 
+    // --- pulse ---
     get pulse() {
         return this.data.pulse || false;
     }
     set pulse(val) { }
 
+    // --- precision (float number precision) ---
     get precision() {
         return this.data.precision || 4;
     }
     set precision(val) { }
 
+    // --- time zone for locale strings and numbers ---
     get timeZone() {
         return this.data.timeZone || 'Europe/Berlin';
     }

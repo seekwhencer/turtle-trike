@@ -10,6 +10,7 @@ import WebServer from './lib/Server/index.js';
 import Mqtt from './lib/Mqtt/index.js';
 import Accesspoint from './lib/Accesspoint/index.js';
 import Serial from './lib/Serial/index.js';
+import Device from './lib/Device/index.js';
 
 export default class App extends MODULECLASS {
     constructor() {
@@ -18,7 +19,7 @@ export default class App extends MODULECLASS {
     }
 
     async start() {
-        global.APP = this;
+        global.APP = this.app = this;
 
         // config
         global.CONF = this.CONFIG = new Config(this);
@@ -32,10 +33,17 @@ export default class App extends MODULECLASS {
         this.WEBSERVER = new WebServer(this);
         await this.WEBSERVER.create();
 
+        // dnsmasq + hostapd (if needed)
         this.AP = new Accesspoint(this);
         await this.AP.create();
 
-        this.serial = new Serial(this);
+        // serial interface to the esp
+        this.SERIAL = new Serial(this);
+
+        // the device
+        this.DEVICE = new Device(this);
+
+
     }
 
     async restart() {
@@ -47,6 +55,8 @@ export default class App extends MODULECLASS {
             global.APP.MQTT,
             global.APP.WEBSERVER,
             global.APP.AP,
+            global.APP.SERIAL,
+            global.APP.DEVICE,
             global.APP;
 
         return await this.start();

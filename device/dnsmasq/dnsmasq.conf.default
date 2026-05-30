@@ -1,10 +1,20 @@
-interface=wlan1
-bind-interfaces
+interface=eth1
 
-dhcp-range=192.168.50.10,192.168.50.100,255.255.255.0,24h
+# DHCP Bereich
+dhcp-range=192.168.50.50,192.168.50.150,255.255.255.0,12h
 
-domain-needed
-bogus-priv
+# Gateway (Pi selbst)
+dhcp-option=3,192.168.50.1
 
+# DNS Server (Pi selbst)
+dhcp-option=6,192.168.50.1
+
+# DNS upstream (optional)
+server=change!me!to!your!homerouter!ip
 server=1.1.1.1
 server=8.8.8.8
+
+# Domain optional
+#domain=lan
+#expand-hosts
+

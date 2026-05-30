@@ -4,6 +4,10 @@ import { ReadlineParser } from '@serialport/parser-readline';
 export default class Serial {
     constructor(app) {
         this.app = app;
+        this.label = 'SERIAL';
+        this.debug = true;
+
+        LOG(this.label, 'INIT', '| DEBUG:', this.debug);
 
         this.port = new SerialPort({
             path: '/dev/ttyUSB0',
@@ -27,10 +31,20 @@ export default class Serial {
         }
 
         if (typeof data === 'object') {
-            
+            this.debug ? LOG(this.label, 'DATA', data) : null;
+            this.receiveData(data);
         } else {
-            console.log('ESP32:', data);
+            this.debug ? LOG(this.label, 'STD', data) : null;
         }
+    }
+
+    receiveData(data) {
+        // ... do things here
+    }
+
+    sendData(data) {
+        const message = JSON.stringify(data);
+        this.port.write(`${message}\n`);
     }
 }
 
